@@ -10,14 +10,12 @@ function plotclusteringspace(classAlg, distanceFunction, k, normalization)
             
             if strcmp(classAlg, 'nearestMean')
                 c = nearestMean(tr1, tr2, [m,n], distanceFunction, normalization);
-
             elseif strcmp(classAlg, 'knn')
                 c = knn(training, [m,n], distanceFunction, k, normalization);
             end;
             
             if c == 1
                 space(fix((n-100)/10)+1, fix(m-10)+1) = 1;
-
             elseif c == 2
                 space(fix((n-100)/10)+1, fix(m-10)+1) = 2;
             end;
@@ -31,7 +29,6 @@ function plotclusteringspace(classAlg, distanceFunction, k, normalization)
         for mSpace=1:31
             if space(nSpace, mSpace) == 1
                 clusters1 = [clusters1; [mSpace+10-1, ((nSpace-1)*10)+100]];
-            
             else
                 clusters2 = [clusters2; [mSpace+10-1, ((nSpace-1)*10)+100]];
             end;

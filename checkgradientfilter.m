@@ -6,11 +6,9 @@ function [exp1, exp2] = checkgradientfilter(im, filterType)
     if strcmpi(filterType, 'roberts')
         filtH = [1 0;0 -1];
         filtV = [0 1;-1 0];
-
     elseif strcmpi(filterType, 'prewitt')
         filtH = [-1 -1 -1;0 0 0;1 1 1];
         filtV = [-1 0 1;-1 0 1;-1 0 1];
-        
     elseif strcmpi(filterType, 'sobel')
         filtH = [-1 -2 -1;0 0 0;1 2 1];
         filtV = [-1 0 1;-2 0 2;-1 0 1];

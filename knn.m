@@ -8,7 +8,6 @@ function clusters = knn(trainingData, newData, distanceFunction, k, normalizatio
     if normalization
         maxX1 = 40;
         maxX2 = 350;
-        
     else
         maxX1 = 1;
         maxX2 = 1;
@@ -44,7 +43,6 @@ function clusters = knn(trainingData, newData, distanceFunction, k, normalizatio
             end;
 
             clusters(x) = mode(minInd);
-            
         elseif strcmp(distanceFunction, 'mahalanobis')
             tr = trainingData;
             tr(:,3) = [];
@@ -60,6 +58,7 @@ function clusters = knn(trainingData, newData, distanceFunction, k, normalizatio
                 diff = repmat(X(:,i), 1, P) - Y;
                 dsq(i,:) = sum((invcov*diff).*diff , 1);
             end
+
             d = sqrt(dsq);
             
             [minDist, origInd] = sort(d);
@@ -70,7 +69,6 @@ function clusters = knn(trainingData, newData, distanceFunction, k, normalizatio
             end;
 
             clusters(x) = mode(minInd);
-           
         end;
     end;
     

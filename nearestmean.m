@@ -1,6 +1,7 @@
 function clusters = nearestmean(tr1, tr2, newData, distanceFunction, normalization)
     
     if normalization
+
         if strcmp(distanceFunction, 'euclidean')
             tr1(:,1) = tr1(:,1)./30;
             tr1(:,2) = tr1(:,2)./250;
@@ -36,7 +37,6 @@ function clusters = nearestmean(tr1, tr2, newData, distanceFunction, normalizati
         
         if distance1 <= distance2
             clusters(1) = 1;
-
         else
             clusters(1) = 2;
         end;
@@ -46,7 +46,6 @@ function clusters = nearestmean(tr1, tr2, newData, distanceFunction, normalizati
         
         if distance1 <= distance2
             clusters(1) = 1;
-        
         else
             clusters(1) = 2;
         end;

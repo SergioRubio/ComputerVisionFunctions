@@ -11,6 +11,7 @@ function imTh = imthresholding(imOriginal, alpha)
     imSize = imSize(1)*imSize(2);
    
     for x = 1:imSize
+        
         if imOriginal(x) <= level
             imTh(x) = level;
         end;

@@ -5,6 +5,7 @@ function he = histequalization2(imOriginal)
 
     for x = 1:numel(imOriginal)
         x1 = imOriginal(x);
+
         if isKey(newMap,x1) == 0
             newMap(x1) = 0;
         end;
@@ -17,10 +18,11 @@ function he = histequalization2(imOriginal)
     sep = (num+1)*(0.7*length(keys2));
 
     for x = 1:length(keys2)
+        
         if ne(x,1)
+
             if x <= 0.7*length(keys2)
                 newMap(keys2(x)) = newMap(keys2(x-1)) + num + 1;
-            
             else
                 newMap(keys2(x)) = newMap(keys2(x-1)) + (255-sep)/(0.3*length(keys2));
             end;
